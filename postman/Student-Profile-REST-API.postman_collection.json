@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "Student Profile REST API",
+    "description": "Q3 API tests for Student Profile and Skill Development Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Add Student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentId\": 201,\n  \"studentName\": \"Aarav Sharma\",\n  \"emailAddress\": \"aarav201@example.com\",\n  \"courseName\": \"B.Tech CSE\",\n  \"programmingScore\": 88,\n  \"mathematicsScore\": 76,\n  \"technicalSkills\": [\n    \"Java\",\n    \"Spring Boot\",\n    \"MySQL\"\n  ]\n}"
+        },
+        "url": "http://localhost:8080/students"
+      }
+    },
+    {
+      "name": "2. Get All Students",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/students"
+      }
+    },
+    {
+      "name": "3. Get Student by ID",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/students/201"
+      }
+    },
+    {
+      "name": "4. Update Scores and Skills",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"programmingScore\": 94,\n  \"mathematicsScore\": 86,\n  \"technicalSkills\": [\n    \"Java\",\n    \"Spring Boot\",\n    \"Docker\"\n  ]\n}"
+        },
+        "url": "http://localhost:8080/students/201"
+      }
+    },
+    {
+      "name": "5. Merit List",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/students/merit-list"
+      }
+    },
+    {
+      "name": "6. Delete Student",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:8080/students/201"
+      }
+    }
+  ]
+}
